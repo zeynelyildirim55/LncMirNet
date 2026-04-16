@@ -1,5 +1,5 @@
 import random
-positive_pairs_path = "../data/lnc_mir_pairs.txt"
+positive_pairs_path = "./data/lnc_mir_pairs.txt"
 positive_pairs=[]
 lncrna_list = []
 mirna_list = []

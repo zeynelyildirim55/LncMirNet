@@ -59,6 +59,6 @@ def get_mirna_lncrna_seq(paired_path,mirna_path,lncrna_path):
 
 
 paired_path = "./data/mirnas_lncrnas_validated.txt"
-mirna_path = "./data/homo.fa"
+mirna_path = "./data/homo_mature_mirna.fa"
 lncrna_path = "./data/gencode.v33.lncRNA_transcripts_new.fa"
 get_mirna_lncrna_seq(paired_path=paired_path,mirna_path=mirna_path,lncrna_path=lncrna_path)
