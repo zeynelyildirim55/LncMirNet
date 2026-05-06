@@ -5,8 +5,8 @@ def read_fa(path):
     res={}
     rescords = list(SeqIO.parse(path,format="fasta"))
     for x in rescords:
-        id = str(x.id)
-        seq = str(x.seq).replace("U","T")
+        id = str(x.id).strip().split("|")[0].split()[0]
+        seq = str(x.seq).upper().replace("U","T").replace("N","")
         res[id]=seq
     return res
 
@@ -29,8 +29,8 @@ def train_doc2vec_model(seq_list,model_name):
 
 mirna_dict = read_fa("./data/homo_mature_mirna.fa")
 mirna_list = list(mirna_dict.values())
-train_doc2vec_model(mirna_dict,"mirna_doc2vec")
+train_doc2vec_model(mirna_list,"mirna_doc2vec")
 
-lncrna_dict = read_fa("./data/gencode.v33.lncRNA_transcripts.fa")
+lncrna_dict = read_fa("./data/outLncRNA.fa") 
 lncrna_list = list(lncrna_dict.values())
 train_doc2vec_model(lncrna_list,"lncrna_doc2vec")
